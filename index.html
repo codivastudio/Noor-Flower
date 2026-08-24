@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160B12">
+  <meta name="description" content="NOOR FLOWERS — Floral artistry, bespoke arrangements and elegant moments.">
+  <title>NOOR FLOWERS — Floral Artistry</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fbf7f8;
+      --paper:#fffdfd;
+      --ink:#1b1016;
+      --wine:#6f2947;
+      --rose:#c87998;
+      --blush:#f3d9e4;
+      --muted:#796a71;
+      --line:rgba(27,16,22,.11);
+      --dark:#160b12;
+      --white:#fff;
+      --shadow:0 24px 70px rgba(35,13,24,.10);
+      --serif:"Cormorant Garamond",Georgia,serif;
+      --sans:"DM Sans",Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg);
+      color:var(--ink);
+      font-family:var(--sans);
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit;border:0;cursor:pointer}
+    img{display:block;width:100%;max-width:100%;height:auto}
+
+    /* subtle editorial background */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.28;
+      background-image:
+        radial-gradient(rgba(111,41,71,.08) .7px,transparent .7px);
+      background-size:22px 22px;
+      mask-image:linear-gradient(to bottom,black,transparent 75%);
+      z-index:-1;
+    }
+
+    .announcement{
+      background:var(--dark);
+      color:#f9edf2;
+      text-align:center;
+      padding:9px 20px;
+      font-size:10px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    /* NAV */
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(251,247,248,.88);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      max-width:1280px;
+      min-height:90px;
+      margin:auto;
+      padding:0 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      direction:ltr;
+    }
+    .logo-img{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      display:block;
+    }
+    .logo-name{
+      font:500 31px/.7 var(--serif);
+      letter-spacing:6px;
+    }
+    .logo-sub{
+      display:block;
+      font:500 8px/1 var(--sans);
+      letter-spacing:5px;
+      margin:9px 0 0 2px;
+      text-align:center;
+    }
+    .nav-links{
+      display:flex;
+      gap:34px;
+      align-items:center;
+      font-size:11px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+    }
+    .nav-links a{
+      position:relative;
+      padding:9px 0;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:2px;
+      width:0;
+      height:1px;
+      background:var(--wine);
+      transition:.3s;
+    }
+    .nav-links a:hover::after{width:100%}
+    .nav-cta{
+      border:1px solid var(--wine);
+      padding:11px 18px;
+      font-size:10px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      transition:.25s;
+    }
+    .nav-cta:hover{background:var(--wine);color:white}
+    .menu{display:none;background:none;font-size:22px}
+
+    /* HERO */
+    .hero{
+      max-width:1280px;
+      margin:auto;
+      min-height:calc(100vh - 116px);
+      padding:65px 28px 85px;
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:70px;
+      align-items:center;
+      direction:ltr;
+    }
+    .hero-copy{max-width:620px}
+    .eyebrow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--wine);
+      font-size:10px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      margin-bottom:24px;
+    }
+    .eyebrow::before{
+      content:"";
+      width:35px;height:1px;background:var(--rose);
+    }
+    h1{
+      font:500 clamp(72px,9vw,132px)/.76 var(--serif);
+      letter-spacing:-4px;
+      margin-bottom:34px;
+    }
+    h1 em{
+      color:var(--wine);
+      font-style:italic;
+      font-weight:400;
+    }
+    .hero-text{
+      max-width:475px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.9;
+      margin-bottom:30px;
+    }
+    .hero-actions{display:flex;gap:12px;align-items:center}
+    .btn{
+      min-height:50px;
+      padding:0 23px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:10px;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      transition:.3s;
+    }
+    .btn-dark{background:var(--dark);color:#fff}
+    .btn-dark:hover{background:var(--wine);transform:translateY(-2px)}
+    .btn-line{border:1px solid var(--line)}
+    .btn-line:hover{border-color:var(--wine);color:var(--wine)}
+
+    .hero-art{
+      position:relative;
+      min-height:660px;
+      direction:ltr;
+    }
+    .hero-main{
+      position:absolute;
+      right:3%;
+      top:0;
+      width:78%;
+      height:610px;
+      overflow:hidden;
+      border-radius:260px 260px 16px 16px;
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(0deg,rgba(22,11,18,.08),rgba(22,11,18,0)),
+        url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1100&q=85")
+        center/cover;
+    }
+    .hero-small{
+      position:absolute;
+      left:0;
+      bottom:15px;
+      width:32%;
+      height:245px;
+      border:10px solid var(--bg);
+      box-shadow:var(--shadow);
+      background:url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80") center/cover;
+    }
+    .hero-number{
+      position:absolute;
+      right:-2px;
+      bottom:28px;
+      writing-mode:vertical-rl;
+      transform:rotate(180deg);
+      font:400 12px var(--sans);
+      letter-spacing:4px;
+      color:var(--muted);
+    }
+    .hero-caption{
+      position:absolute;
+      left:0;
+      top:52px;
+      writing-mode:vertical-rl;
+      font:400 11px var(--sans);
+      letter-spacing:4px;
+      text-transform:uppercase;
+      color:var(--wine);
+    }
+
+    /* MARQUEE */
+    .marquee{
+      overflow:hidden;
+      background:var(--dark);
+      color:#f7e8ee;
+      border-top:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .marquee-track{
+      width:max-content;
+      display:flex;
+      gap:50px;
+      padding:16px 0;
+      animation:scroll 28s linear infinite;
+      font:500 11px var(--sans);
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+    .marquee-track span::after{content:"✦";margin-left:50px;color:#d795ad}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+
+    /* SECTION */
+    section{padding:120px 28px}
+    .container{max-width:1280px;margin:auto}
+    .section-intro{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:60px;
+      align-items:end;
+      margin-bottom:55px;
+    }
+    .section-label{
+      color:var(--wine);
+      font-size:10px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+    .section-title{
+      font:500 clamp(52px,6vw,82px)/.82 var(--serif);
+      letter-spacing:-2px;
+    }
+    .section-copy{
+      max-width:450px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.9;
+    }
+
+    /* SELECTED WORK */
+    .works{background:var(--paper)}
+    .work-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:20px;
+    }
+    .work{
+      position:relative;
+      overflow:hidden;
+      background:#eadde2;
+      min-height:560px;
+      cursor:pointer;
+    }
+    .work:nth-child(2){min-height:270px}
+    .work:nth-child(3){min-height:270px}
+    .work:nth-child(2),.work:nth-child(3){
+      display:grid;
+      grid-template-columns:1fr;
+    }
+    .work-grid > div:nth-child(2){
+      display:grid;
+      gap:20px;
+    }
+    .work img{
+      height:100%;
+      object-fit:cover;
+      transition:.7s cubic-bezier(.2,.7,.2,1);
+    }
+    .work:hover img{transform:scale(1.055)}
+    .work-overlay{
+      position:absolute;
+      inset:auto 0 0;
+      padding:28px;
+      color:#fff;
+      background:linear-gradient(transparent,rgba(20,8,14,.75));
+    }
+    .work-overlay small{
+      display:block;
+      font-size:9px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      margin-bottom:6px;
+      opacity:.8;
+    }
+    .work-overlay h3{
+      font:500 38px/.9 var(--serif);
+    }
+    .work-tall{grid-row:span 2}
+
+    /* PHILOSOPHY */
+    .philosophy{
+      background:var(--blush);
+      position:relative;
+      overflow:hidden;
+    }
+    .philosophy::after{
+      content:"NOOR";
+      position:absolute;
+      right:-40px;
+      bottom:-65px;
+      font:500 230px/.7 var(--serif);
+      color:rgba(111,41,71,.06);
+      pointer-events:none;
+    }
+    .philosophy-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:100px;
+      align-items:center;
+    }
+    .statement{
+      font:400 clamp(52px,6vw,82px)/.88 var(--serif);
+      letter-spacing:-2px;
+    }
+    .statement em{color:var(--wine)}
+    .principles{display:grid;gap:0}
+    .principle{
+      display:grid;
+      grid-template-columns:55px 1fr;
+      gap:20px;
+      padding:25px 0;
+      border-top:1px solid rgba(111,41,71,.18);
+    }
+    .principle:last-child{border-bottom:1px solid rgba(111,41,71,.18)}
+    .principle span{color:var(--wine);font-size:11px;letter-spacing:2px}
+    .principle h3{font:500 27px/1 var(--serif);margin-bottom:6px}
+    .principle p{font-size:11px;color:#765e68;line-height:1.7}
+
+    /* ABOUT */
+    .about-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:90px;
+      align-items:center;
+    }
+    .about-image{
+      height:620px;
+      background:url("https://images.unsplash.com/photo-1455582916367-25f75bfc6710?auto=format&fit=crop&w=900&q=82") center/cover;
+      position:relative;
+    }
+    .about-image::after{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(255,255,255,.65);
+      pointer-events:none;
+    }
+    .about-copy h2{
+      font:500 clamp(55px,6vw,88px)/.82 var(--serif);
+      margin:18px 0 25px;
+    }
+    .about-copy h2 em{font-style:italic;color:var(--wine)}
+    .about-copy p{max-width:520px;color:var(--muted);font-size:14px;line-height:2}
+    .about-meta{
+      margin-top:35px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .meta{padding:20px 10px 20px 0}
+    .meta strong{display:block;font:500 34px var(--serif);color:var(--wine)}
+    .meta span{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+
+    /* PROCESS */
+    .process{background:var(--dark);color:white}
+    .process .section-label{color:#d99ab2}
+    .process .section-copy{color:#bcaab2}
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      border-top:1px solid rgba(255,255,255,.14);
+    }
+    .step{
+      padding:35px 25px 0 0;
+      border-right:1px solid rgba(255,255,255,.14);
+      min-height:230px;
+    }
+    .step:first-child{border-right:0}
+    .step-number{font-size:10px;letter-spacing:2px;color:#d99ab2}
+    .step h3{font:500 35px/.9 var(--serif);margin:35px 0 13px}
+    .step p{color:#bcaab2;font-size:11px;line-height:1.8;max-width:200px}
+
+    /* INSTAGRAM */
+    .instagram-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:8px;
+    }
+    .insta{
+      aspect-ratio:1;
+      overflow:hidden;
+      background:#eee;
+    }
+    .insta img{height:100%;object-fit:cover;transition:.5s}
+    .insta:hover img{transform:scale(1.06)}
+    .instagram-bottom{
+      text-align:center;
+      padding-top:30px;
+    }
+    .instagram-bottom a{
+      font-size:11px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      color:var(--wine);
+      border-bottom:1px solid var(--wine);
+      padding-bottom:5px;
+    }
+
+    /* CONTACT */
+    .contact{
+      background:var(--paper);
+      text-align:center;
+    }
+    .contact h2{
+      font:500 clamp(70px,10vw,145px)/.72 var(--serif);
+      letter-spacing:-5px;
+      margin:20px auto 28px;
+    }
+    .contact h2 em{font-style:italic;color:var(--wine)}
+    .contact p{color:var(--muted);font-size:13px;margin-bottom:28px}
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+    .contact-links a{
+      font-size:10px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+      color:var(--wine);
+    }
+
+    /* FOOTER */
+    footer{
+      background:var(--dark);
+      color:white;
+      padding:55px 28px 25px;
+    }
+    .footer-inner{
+      max-width:1280px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      gap:30px;
+      align-items:end;
+    }
+    footer .logo-name{color:white}
+    footer .logo-sub{color:#d5c4ca}
+    .footer-right{text-align:right}
+    .footer-right p{color:#a9959e;font-size:10px;margin-bottom:12px}
+    .footer-links{display:flex;gap:20px;font-size:10px;letter-spacing:1px}
+    .copyright{
+      max-width:1280px;
+      margin:40px auto 0;
+      padding-top:18px;
+      border-top:1px solid rgba(255,255,255,.1);
+      color:#88747d;
+      font-size:9px;
+      display:flex;
+      justify-content:space-between;
+    }
+
+
+    /* =========================================================
+       EXTRA RESPONSIVE SYSTEM
+       Optimized for phones, tablets, laptops and large displays
+       ========================================================= */
+
+    /* Prevent accidental horizontal overflow */
+    html, body { max-width:100%; }
+    .container, .nav, .hero { width:100%; }
+
+    /* Large screens */
+    @media (min-width:1440px){
+      .nav, .hero, .container, .footer-inner, .copyright{
+        max-width:1380px;
+      }
+      .hero{
+        padding-top:80px;
+        padding-bottom:100px;
+        gap:90px;
+      }
+      .hero-main{height:680px;}
+      .hero-art{min-height:730px;}
+      section{padding-top:145px;padding-bottom:145px;}
+    }
+
+    /* Medium laptops / tablets landscape */
+    @media (max-width:1199px){
+      .nav{padding-left:24px;padding-right:24px;}
+      .hero{
+        grid-template-columns:minmax(0,1fr) minmax(360px,.9fr);
+        gap:45px;
+      }
+      .hero-art{min-height:590px;}
+      .hero-main{height:545px;}
+      .section-intro{gap:40px;}
+      .philosophy-grid,.about-grid{gap:60px;}
+    }
+
+    /* Tablets */
+    @media (max-width:900px){
+      .nav-links{display:none;}
+      .nav-cta{display:none;}
+      .menu{display:block;}
+
+      .hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+        gap:55px;
+      }
+      .hero-copy{
+        max-width:720px;
+      }
+      .hero-art{
+        width:100%;
+        max-width:650px;
+        margin:0 auto;
+        min-height:570px;
+      }
+
+      .section-intro{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .work-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .work-tall{
+        grid-row:span 2;
+      }
+      .work-grid > div:nth-child(2){
+        display:grid;
+        grid-template-columns:1fr;
+        gap:20px;
+      }
+
+      .philosophy-grid{
+        grid-template-columns:1fr;
+        gap:60px;
+      }
+
+      .about-grid{
+        grid-template-columns:1fr;
+        gap:55px;
+      }
+      .about-image{
+        max-width:650px;
+        width:100%;
+        margin:auto;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr 1fr;
+      }
+      .step{
+        border-right:1px solid rgba(255,255,255,.14);
+      }
+      .step:nth-child(2n){
+        border-right:0;
+        padding-left:25px;
+      }
+
+      .instagram-grid{
+        grid-template-columns:repeat(4,1fr);
+      }
+      .instagram-grid .insta:last-child{
+        display:none;
+      }
+    }
+
+    /* Phones */
+    @media (max-width:600px){
+      .announcement{
+        padding:8px 12px;
+        font-size:8px;
+        letter-spacing:1.2px;
+        white-space:nowrap;
+        overflow:hidden;
+      }
+
+      .nav{
+        min-height:72px;
+        padding:0 16px;
+      }
+
+      .logo{
+        gap:10px;
+      }
+      .logo-img{
+        width:45px;
+        height:45px;
+      }
+      .logo-name{
+        font-size:25px;
+        letter-spacing:4px;
+      }
+      .logo-sub{
+        font-size:6px;
+        letter-spacing:3.5px;
+        margin-top:8px;
+      }
+
+      .hero{
+        padding:55px 17px 65px;
+        gap:45px;
+      }
+
+      .eyebrow{
+        font-size:8px;
+        letter-spacing:2px;
+        margin-bottom:21px;
+      }
+      .eyebrow::before{
+        width:25px;
+      }
+
+      h1{
+        font-size:clamp(62px,18vw,86px);
+        line-height:.78;
+        letter-spacing:-3px;
+        margin-bottom:28px;
+      }
+
+      .hero-text{
+        font-size:12px;
+        line-height:1.85;
+        margin-bottom:25px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+        width:100%;
+        max-width:360px;
+      }
+      .btn{
+        width:100%;
+        min-height:48px;
+      }
+
+      .hero-art{
+        min-height:440px;
+        width:100%;
+      }
+      .hero-main{
+        width:82%;
+        height:min(430px,105vw);
+        right:0;
+        border-radius:180px 180px 13px 13px;
+      }
+      .hero-small{
+        width:39%;
+        height:min(175px,43vw);
+        left:0;
+        bottom:0;
+        border-width:7px;
+      }
+      .hero-number{
+        font-size:8px;
+        letter-spacing:2px;
+        right:-4px;
+        bottom:20px;
+      }
+
+      section{
+        padding:78px 17px;
+      }
+
+      .section-label{
+        font-size:8px;
+        letter-spacing:2px;
+      }
+      .section-title{
+        font-size:clamp(51px,15vw,70px);
+        line-height:.82;
+      }
+      .section-copy{
+        font-size:12px;
+        line-height:1.8;
+      }
+
+      .work-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      .work-grid > div:nth-child(2){
+        gap:14px;
+      }
+      .work,
+      .work:nth-child(2),
+      .work:nth-child(3),
+      .work-tall{
+        min-height:105vw;
+        max-height:600px;
+      }
+      .work-overlay{
+        padding:22px;
+      }
+      .work-overlay h3{
+        font-size:32px;
+      }
+
+      .statement{
+        font-size:clamp(51px,14vw,70px);
+        line-height:.86;
+      }
+
+      .principle{
+        grid-template-columns:38px 1fr;
+        gap:12px;
+        padding:22px 0;
+      }
+      .principle h3{
+        font-size:25px;
+      }
+      .principle p{
+        font-size:10px;
+      }
+
+      .about-image{
+        height:min(125vw,500px);
+      }
+      .about-copy h2{
+        font-size:clamp(55px,15vw,78px);
+      }
+      .about-copy p{
+        font-size:12px;
+        line-height:1.9;
+      }
+      .about-meta{
+        gap:0;
+      }
+      .meta{
+        padding:17px 4px 17px 0;
+      }
+      .meta strong{
+        font-size:27px;
+      }
+      .meta span{
+        font-size:7px;
+        letter-spacing:1px;
+      }
+
+      .process-grid{
+        grid-template-columns:1fr;
+      }
+      .step,
+      .step:nth-child(2n){
+        border-right:0;
+        padding:27px 0;
+        min-height:auto;
+      }
+      .step h3{
+        font-size:32px;
+        margin:25px 0 10px;
+      }
+
+      .instagram-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:6px;
+      }
+      .instagram-grid .insta:last-child{
+        display:block;
+      }
+
+      .contact h2{
+        font-size:clamp(68px,19vw,95px);
+        letter-spacing:-4px;
+      }
+      .contact p{
+        font-size:11px;
+        line-height:1.7;
+        max-width:320px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      .contact-links{
+        gap:18px;
+      }
+
+      footer{
+        padding:45px 17px 22px;
+      }
+      .footer-inner{
+        display:block;
+      }
+      .footer-right{
+        text-align:left;
+        margin-top:28px;
+      }
+      .footer-links{
+        flex-wrap:wrap;
+        gap:14px;
+      }
+      .copyright{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        margin-top:30px;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width:380px){
+      .nav{padding:0 13px;}
+      .logo-name{font-size:22px;}
+      .logo-img{width:38px;height:38px;}
+      .hero{padding-left:14px;padding-right:14px;}
+      section{padding-left:14px;padding-right:14px;}
+      h1{font-size:58px;}
+      .hero-art{min-height:390px;}
+      .hero-main{height:370px;}
+      .hero-small{height:145px;}
+      .section-title{font-size:50px;}
+      .statement{font-size:48px;}
+      .about-meta{grid-template-columns:1fr 1fr 1fr;}
+      .meta strong{font-size:23px;}
+      .meta span{font-size:6.5px;}
+      .contact h2{font-size:62px;}
+    }
+
+    /* Accessibility / touch / reduced motion */
+    @media (hover:none){
+      .work:hover img,
+      .insta:hover img{
+        transform:none;
+      }
+      .btn:hover{
+        transform:none;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto;}
+      *,*::before,*::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+      }
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1000px){
+      .nav-links{display:none}
+      .menu{display:block}
+      .nav-cta{display:none}
+      .hero{grid-template-columns:1fr;gap:35px}
+      .hero-art{min-height:560px}
+      .hero-main{height:520px}
+      .section-intro{grid-template-columns:1fr;gap:20px}
+      .philosophy-grid,.about-grid{grid-template-columns:1fr;gap:50px}
+      .about-image{height:500px}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .step{border-bottom:1px solid rgba(255,255,255,.14)}
+      .instagram-grid{grid-template-columns:repeat(3,1fr)}
+    }
+
+    @media(max-width:650px){
+      .announcement{font-size:8px;letter-spacing:1.5px}
+      .nav{min-height:70px;padding:0 17px}
+      .logo-name{font-size:25px}
+      .logo-img{width:40px;height:40px}
+      .logo-sub{font-size:7px}
+      section{padding:80px 18px}
+      .hero{padding:50px 18px 70px;min-height:auto}
+      h1{font-size:70px;letter-spacing:-3px}
+      .hero-art{min-height:470px}
+      .hero-main{height:430px;width:82%;right:0}
+      .hero-small{height:170px;width:38%;bottom:0}
+      .hero-caption{display:none}
+      .section-title{font-size:57px}
+      .work-grid{grid-template-columns:1fr}
+      .work,.work:nth-child(2),.work:nth-child(3){min-height:430px}
+      .work-grid > div:nth-child(2){display:grid;grid-template-columns:1fr}
+      .work-overlay h3{font-size:31px}
+      .statement{font-size:55px}
+      .about-image{height:420px}
+      .about-meta{grid-template-columns:repeat(3,1fr)}
+      .meta strong{font-size:27px}
+      .process-grid{grid-template-columns:1fr}
+      .step{border-right:0;padding-right:0}
+      .instagram-grid{grid-template-columns:repeat(2,1fr)}
+      .instagram-grid .insta:last-child{display:none}
+      .contact h2{font-size:72px;letter-spacing:-3px}
+      .footer-inner{display:block}
+      .footer-right{text-align:left;margin-top:30px}
+      .copyright{display:block}
+      .copyright span{display:block;margin-bottom:7px}
+    }
+  
+/* ===== FINAL MOBILE OVERRIDES ===== */
+@media screen and (max-width: 768px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden!important}
+  body{min-width:0!important}
+  .announcement{width:100%;overflow:hidden}
+  header{width:100%;position:sticky;top:0}
+  .nav{width:100%;max-width:none!important;height:72px;min-height:72px;padding:0 14px;gap:8px}
+  .logo{min-width:0;flex:1}
+  .logo-name{font-size:24px!important;letter-spacing:3px!important}
+  .logo-sub{font-size:6px!important;letter-spacing:3px!important}
+  .menu{display:block!important;flex:0 0 40px;width:40px;height:40px}
+  .nav-links{
+    box-sizing:border-box!important;
+    width:calc(100vw - 28px)!important;
+    max-width:none!important;
+    left:14px!important;
+    right:auto!important;
+    top:68px!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+
+  .hero{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    max-width:none!important;
+    padding:52px 16px 55px!important;
+    gap:40px!important;
+    overflow:hidden!important;
+  }
+  .hero-copy{width:100%!important;max-width:none!important}
+  h1{
+    font-size:clamp(56px,18vw,78px)!important;
+    letter-spacing:-3px!important;
+    max-width:100%!important;
+    overflow-wrap:break-word!important;
+  }
+  .hero-text{width:100%!important;max-width:100%!important}
+  .hero-actions{width:100%!important;max-width:none!important}
+  .btn{width:100%!important}
+  .hero-art{
+    position:relative!important;
+    width:100%!important;
+    max-width:520px!important;
+    min-height:420px!important;
+    margin:0 auto!important;
+    overflow:visible!important;
+  }
+  .hero-main{
+    width:78%!important;
+    max-width:390px!important;
+    height:390px!important;
+    right:0!important;
+    left:auto!important;
+  }
+  .hero-small{
+    width:38%!important;
+    max-width:180px!important;
+    height:155px!important;
+    left:0!important;
+    bottom:0!important;
+  }
+  .hero-caption{display:none!important}
+  .hero-number{right:0!important}
+
+  section{
+    width:100%!important;
+    max-width:none!important;
+    padding:72px 16px!important;
+    overflow:hidden!important;
+  }
+  .container{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+  }
+  .section-intro{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    gap:20px!important;
+    margin-bottom:38px!important;
+  }
+  .section-title{
+    font-size:clamp(48px,15vw,65px)!important;
+    max-width:100%!important;
+  }
+  .section-copy{max-width:100%!important}
+
+  .work-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    gap:14px!important;
+  }
+  .work-grid>div:nth-child(2){
+    display:flex!important;
+    flex-direction:column!important;
+    gap:14px!important;
+  }
+  .work,
+  .work:nth-child(2),
+  .work:nth-child(3),
+  .work-tall{
+    width:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    height:110vw!important;
+    max-height:540px!important;
+    grid-row:auto!important;
+  }
+  .work img{width:100%!important;height:100%!important;object-fit:cover!important}
+
+  .philosophy-grid,.about-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+    gap:45px!important;
+  }
+  .statement{
+    font-size:clamp(48px,14.5vw,68px)!important;
+    max-width:100%!important;
+  }
+  .principles{width:100%!important}
+  .about-image{
+    width:100%!important;
+    max-width:none!important;
+    height:115vw!important;
+    max-height:480px!important;
+  }
+  .about-copy{width:100%!important}
+  .about-meta{width:100%!important}
+
+  .process-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    width:100%!important;
+  }
+  .step{
+    width:100%!important;
+    padding:25px 0!important;
+    border-right:0!important;
+  }
+
+  .instagram-grid{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    width:100%!important;
+    gap:6px!important;
+  }
+  .insta{min-width:0!important;width:100%!important}
+  .insta img{width:100%!important;height:100%!important;object-fit:cover!important}
+
+  .contact h2{
+    width:100%!important;
+    font-size:clamp(58px,18vw,82px)!important;
+    letter-spacing:-3px!important;
+    overflow-wrap:break-word!important;
+  }
+  .contact-links{width:100%!important}
+
+  footer{width:100%!important;overflow:hidden!important}
+  .footer-inner,.copyright{
+    width:100%!important;
+    max-width:none!important;
+  }
+}
+
+/* Very small phones */
+@media screen and (max-width:390px){
+  .nav{padding:0 11px!important}
+  .logo-img{width:36px!important;height:36px!important}
+  .logo-name{font-size:21px!important}
+  .hero{padding-left:13px!important;padding-right:13px!important}
+  section{padding-left:13px!important;padding-right:13px!important}
+  .hero-art{min-height:360px!important}
+  .hero-main{height:335px!important}
+  .hero-small{height:130px!important}
+  .work,.work:nth-child(2),.work:nth-child(3),.work-tall{height:115vw!important}
+  .contact h2{font-size:clamp(55px,17.5vw,70px)!important}
+}
+
+/* Landscape phones */
+@media screen and (max-width:900px) and (orientation:landscape){
+  .hero{
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+    align-items:center!important;
+  }
+  .hero-art{min-height:360px!important}
+  .hero-main{height:330px!important}
+  .hero-small{height:125px!important}
+}
+
+</style>
+</head>
+
+<body>
+  <div class="announcement">Floral artistry • Bespoke arrangements • Algeria</div>
+
+  <header>
+    <nav class="nav">
+      <a href="#home" class="logo" aria-label="NOOR FLOWERS home">
+        <img src="noor logo.png" alt="NOOR logo" class="logo-img">
+        <div>
+          <div class="logo-name">NOOR</div>
+          <span class="logo-sub">FLOWERS</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#work">Selected Work</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a href="#contact" class="nav-cta">Let's create</a>
+      <button class="menu" onclick="toggleMobileMenu()" aria-label="Open menu">☰</button>
+    </nav>
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">NOOR FLOWERS — FLORAL STORE</div>
+        <h1>Flowers<br>with <em>feeling.</em></h1>
+        <p class="hero-text">
+          A contemporary floral creating thoughtful arrangements,
+          distinctive gifting experiences and beautiful moments designed to be remembered.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-dark">Explore our work </a>
+          <a href="#contact" class="btn btn-line">Start a project</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-main"></div>
+        <div class="hero-small"></div>
+        <div class="hero-caption">Made for moments worth remembering</div>
+        <div class="hero-number">NOOR / 001</div>
+      </div>
+    </section>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Floral Design</span>
+        <span>Bespoke Bouquets</span>
+        <span>Luxury Gifting</span>
+        <span>Special Occasions</span>
+        <span>Floral Design</span>
+        <span>Bespoke Bouquets</span>
+        <span>Luxury Gifting</span>
+        <span>Special Occasions</span>
+      </div>
+    </div>
+
+    <section class="works" id="work">
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <div class="section-label">Selected Work</div>
+            <h2 class="section-title">A collection<br>of moments.</h2>
+          </div>
+          <p class="section-copy">
+            Every arrangement is a visual composition — balancing color, texture,
+            shape and emotion to create something that feels personal.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work work-tall">
+            <img src="pic 1.jfif" alt="Soft Romance">
+            <div class="work-overlay">
+              <small>01 — Signature Collection</small>
+              <h3>Soft Romance</h3>
+            </div>
+          </article>
+
+          <div>
+            <article class="work">
+              <img src="pic 2.jfif" alt="Garden Notes">
+              <div class="work-overlay">
+                <small>02 — Seasonal</small>
+                <h3>Garden Notes</h3>
+              </div>
+            </article>
+
+            <article class="work">
+              <img src="pic 3.jfif" alt="Pure Elegance">
+              <div class="work-overlay">
+                <small>03 — Bespoke</small>
+                <h3>Pure Elegance</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+      <div class="container philosophy-grid">
+        <div>
+          <div class="section-label">Philosophy</div>
+          <div class="statement">
+            We don't just<br>arrange <em>flowers.</em><br>We shape feelings.
+          </div>
+        </div>
+
+        <div class="principles">
+          <div class="principle">
+            <span>01</span>
+            <div>
+              <h3>Intentional design</h3>
+              <p>Every stem, color and detail has a purpose.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span>02</span>
+            <div>
+              <h3>Personal expression</h3>
+              <p>Our arrangements are made to feel like yours.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span>03</span>
+            <div>
+              <h3>Quiet luxury</h3>
+              <p>Elegant, refined and never overdone.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span>04</span>
+            <div>
+              <h3>Fresh perspective</h3>
+              <p>Classic flowers interpreted through a modern eye.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-image"></div>
+
+        <div class="about-copy">
+          <div class="section-label">About NOOR</div>
+          <h2>Made with<br><em>intention.</em></h2>
+          <p>
+            NOOR FLOWERS is a floral studio built around one simple belief:
+            beauty becomes meaningful when it carries emotion.
+            From intimate gestures to unforgettable celebrations,
+            we create floral experiences that feel considered, warm and unmistakably personal.
+          </p>
+
+          <div class="about-meta">
+            <div class="meta">
+              <strong>40+</strong>
+              <span>Published works</span>
+            </div>
+            <div class="meta">
+              <strong>3K+</strong>
+              <span>Community</span>
+            </div>
+            <div class="meta">
+              <strong>∞</strong>
+              <span>Beautiful moments</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <div class="section-label">The Process</div>
+            <h2 class="section-title">From idea<br>to bloom.</h2>
+          </div>
+          <p class="section-copy">
+            A simple, thoughtful process that turns your idea into a floral piece
+            made specifically for the moment.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step">
+            <span class="step-number">01 / DISCOVER</span>
+            <h3>The story</h3>
+            <p>We learn about the occasion, the feeling and the person behind it.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">02 / CURATE</span>
+            <h3>The palette</h3>
+            <p>We select flowers, tones and textures that bring the idea to life.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">03 / CREATE</span>
+            <h3>The arrangement</h3>
+            <p>Every stem is placed with balance, detail and intention.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">04 / DELIVER</span>
+            <h3>The moment</h3>
+            <p>Your finished piece is carefully prepared and ready to be remembered.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <div class="section-label">Instagram</div>
+            <h2 class="section-title">From our<br>studio.</h2>
+          </div>
+          <p class="section-copy">
+            A glimpse into recent arrangements, floral experiments and moments from NOOR FLOWERS.
+          </p>
+        </div>
+
+        <div class="instagram-grid">
+          <a class="insta" href="https://instagram.com/noor.flowers03" target="_blank"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=600&q=80" alt=""></a>
+          <a class="insta" href="https://instagram.com/noor.flowers03" target="_blank"><img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=600&q=80" alt=""></a>
+          <a class="insta" href="https://instagram.com/noor.flowers03" target="_blank"><img src="https://images.unsplash.com/photo-1455582916367-25f75bfc6710?auto=format&fit=crop&w=600&q=80" alt=""></a>
+          <a class="insta" href="https://instagram.com/noor.flowers03" target="_blank"><img src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=600&q=80" alt=""></a>
+          <a class="insta" href="https://instagram.com/noor.flowers03" target="_blank"><img src="https://images.unsplash.com/photo-1495231916356-a86217efff12?auto=format&fit=crop&w=600&q=80" alt=""></a>
+        </div>
+
+        <div class="instagram-bottom">
+          <a href="https://instagram.com/noor.flowers03" target="_blank">@noor.flowers03 — Follow the studio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-label">Let's create</div>
+        <h2>Make it<br><em>meaningful.</em></h2>
+        <p>Have an occasion, a gift or an idea in mind? We'd love to hear it.</p>
+        <div class="contact-links">
+          <a href="https://instagram.com/noor.flowers03" target="_blank">Instagram ↗</a>
+          <a href="mailto:noor.flowers03@gmail.com">Email ↗</a>
+          <a href="tel:+213660123456">Call us ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="#home" class="logo">
+        <img src="noor logo.png" alt="NOOR logo" class="logo-img">
+        <div>
+          <div class="logo-name">NOOR</div>
+          <span class="logo-sub">FLOWERS</span>
+        </div>
+      </a>
+
+      <div class="footer-right">
+        <p>Floral artistry for moments worth remembering.</p>
+        <div class="footer-links">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="https://instagram.com/noor.flowers03" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 NOOR FLOWERS. All rights reserved.</span>
+      <span>Designed with intention.</span>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMobileMenu(){
+      const nav = document.querySelector(".nav-links");
+      const isOpen = nav.dataset.open === "true";
+
+      if(isOpen){
+        nav.removeAttribute("style");
+        nav.dataset.open = "false";
+        return;
+      }
+
+      nav.dataset.open = "true";
+      nav.style.cssText = `
+        display:flex;
+        max-width:calc(100vw - 34px);
+        position:absolute;
+        top:70px;
+        left:17px;
+        right:17px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:10px 18px;
+        background:rgba(255,253,253,.98);
+        border:1px solid rgba(27,16,22,.1);
+        box-shadow:0 20px 50px rgba(27,16,22,.12);
+      `;
+
+      nav.querySelectorAll("a").forEach(a=>{
+        a.style.padding="14px 0";
+        a.style.borderBottom="1px solid rgba(27,16,22,.07)";
+      });
+    }
+
+    // Reveal-on-scroll
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.style.opacity="1";
+          entry.target.style.transform="translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.08});
+
+    document.querySelectorAll(
+      ".work,.principle,.step,.about-copy,.hero-copy,.hero-art,.insta"
+    ).forEach(el=>{
+      el.style.opacity="0";
+      el.style.transform="translateY(22px)";
+      el.style.transition="opacity .8s ease, transform .8s ease";
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
